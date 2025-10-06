@@ -4,61 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yurt Sürücü Kursu | Eğitimde Doğru Adres</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-image: url('arka_plann.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: #222;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
     header {
-      background-color: rgba(255,255,255,0.9);
+      background-color: rgba(255,255,255,0.95);
       text-align: center;
       padding: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    h1 { color: #222; font-size: 28px; }
-    h2, h3 { text-align: center; color: #333; }
-    p { color: #000; line-height: 1.6; width: 80%; margin: auto; }
-
-    .highlight { color: red; }
-    .info { color: blue; }
-
-    iframe {
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
+    header img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
     }
-	
-	img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  filter: contrast(110%) brightness(105%) saturate(120%);
-}
 
+    nav {
+      margin-top: 10px;
+    }
 
-    form {
+    nav a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0056b3;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .info {
+      color: #555;
+    }
+
+    /* Eğitmenlerimiz */
+    .egitmenler {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .egitmen {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
-      background-color: rgba(255,255,255,0.85);
-      width: 60%;
-      margin: 30px auto;
       padding: 20px;
+      width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .egitmen:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .egitmen img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      margin-bottom: 10px;
+    }
+
+    /* Başarı istatistikleri */
+    .basari {
+      text-align: center;
+      background: #007bff;
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+
+    /* Form */
+    form {
+      background-color: white;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 40px auto;
     }
 
     input, select {
+      width: 90%;
       padding: 10px;
-      width: 80%;
       margin: 10px 0;
       border-radius: 8px;
       border: 1px solid #ccc;
@@ -69,6 +139,8 @@
       color: white;
       border: none;
       cursor: pointer;
+      width: 50%;
+      transition: background 0.3s;
     }
 
     input[type="submit"]:hover {
@@ -77,57 +149,287 @@
 
     footer {
       text-align: center;
-      background: rgba(0,0,0,0.8);
+      background-color: #333;
       color: white;
       padding: 20px;
-      margin-top: 30px;
+      margin-top: 40px;
     }
+
+    .social a img {
+      width: 35px;
+      margin: 0 5px;
+      transition: transform 0.3s;
+    }
+
+    .social a img:hover {
+      transform: scale(1.2);
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 100%;
+    }
+	
+	.kurs-sureci .adimlar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+.kurs-sureci .adim {
+  text-align: center;
+  width: 120px;
+  position: relative;
+}
+
+.kurs-sureci .numara {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  border: 3px solid red;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  font-weight: bold;
+  color: black;
+}
+
+
   </style>
 </head>
 <body>
 
-<header>
-  <img src="kursfoto_hd.jpg" alt="Yurt Sürücü Kursu" width="150">
+<header id="top">
+  <img src="kurs.jpg" alt="Kurs Fotoğrafı" width="400">
   <h1>Yurt Sürücü Kursları | 32 Yıllık Tecrübesiyle Eğitimde Doğru Adres</h1>
-</header>	
+  <nav>
+    <a href="#top">Ana Sayfa |</a>
+	<a href="#Hakkımızda">Hakkımızda |</a>
+    <a href="#egitmenlerimiz">Eğitmenlerimiz |</a>
+    <a href="#basvuru">Başvuru Formu |</a>
+	<a href="#sıkcasorulansorular"">Sıkça Sorulan Sorular |</a>
+	<a href="#yorumlar">Öğrenci yorumları |</a>
+	<a href="#sosyalmedya">Sosyal Medya Hesabımız |</a>
+	<a href="#gereklibelgeler">Gerekli Belgeler |</a>
+	
+  </nav>
+</header>
 
-<h2>Hakkımızda</h2>
+<section>
+  <h2 id="Hakkımızda">Hakkımızda</h2>
+  <p>
+    1983 yılında kurulan <strong>Yurt Sürücü Kursu</strong>, 32 yılı aşkın süredir binlerce sürücü adayını güvenli sürüşe hazırlamıştır.
+    Amacımız yalnızca ehliyet kazandırmak değil, aynı zamanda trafiğe bilinçli ve saygılı sürücüler kazandırmaktır. Yurt Sürücü Kursu olarak, sürücü adaylarına güvenli, bilinçli ve sorumluluk sahibi birer sürücü olma yolunda eğitim veriyoruz. Mustafa Kemal Atatürk’ün “Hayatta en hakiki mürşit ilimdir” sözünden ilham alarak, modern eğitim yöntemleriyle her öğrencimizi destekliyoruz.
+  </p>
+  <p class="highlight">
+    Deneyimli eğitmen kadromuz, modern araç filomuz ve birebir eğitim anlayışımızla sizlere en kaliteli sürücü eğitimini sunmayı hedefliyoruz.
+    <em>“Yurt Sürücü Kursu – Ehliyet değil, güven kazandırıyoruz.”</em>
+  </p>
+  <p class="info">
+    Neden Bizi Tercih Etmelisiniz?<br>
+    • Deneyimli eğitmen kadrosu<br>
+    • Yeni model araçlarla uygulama eğitimi<br>
+    • Uygun fiyat ve taksit imkânı<br>
+    • Yüksek başarı oranı
+  </p>
+</section>
 
-<p>
-  1983 yılında kurulan <strong>Yurt Sürücü Kursu</strong>, 32 yılı aşkın süredir binlerce sürücü adayını güvenli sürüşe hazırlamıştır.
-  Amacımız yalnızca ehliyet kazandırmak değil, aynı zamanda trafiğe bilinçli ve saygılı sürücüler kazandırmaktır.
-</p>
+<section class="basari">
+  <h2>Başarılarımız</h2>
+  <p> <p style="font-size: 18px;"> 32 yıllık tecrübe ile <strong>5000+</strong> sürücü adayına eğitim verdik.</p>
+  <p <p style="font-size: 18px;" >280.500 saat + eğitim.</p>
+   <p <p style="font-size: 18px;">%95 başarı oranıyla ehliyet sahibi öğrenciler.</p>
+    <p <p style="font-size: 18px;">Öğrenci memnuniyetinde 5 yıldızlı hizmet.</p>
+	 <p <p style="font-size: 18px;">Teorik ve pratik sınavlarda yüksek başarı.</p>
+  
+</section>
 
-<p class="highlight">
-  Deneyimli eğitmen kadromuz, modern araç filomuz ve birebir eğitim anlayışımızla sizlere en kaliteli sürücü eğitimini sunmayı hedefliyoruz.
-  <em>“Yurt Sürücü Kursu – Ehliyet değil, güven kazandırıyoruz.”</em>
-</p>
+<section id="egitmenlerimiz">
+  <h2>Eğitmenlerimiz</h2>
+  <p <p style="font-size: 18px;" style="text-align:center;">Deneyimli ve profesyonel eğitmenlerimizle sizlere güvenli sürüş eğitimi sunuyoruz.</p>
+  
+  <div class="egitmenler">
+    <div class="egitmen">
+      <alt="Zehra Erşaru">
+      <h3>Zehra Erşaru</h3>
+      <p>Teorik trafik derslerinde uzman, öğrencilerine sabırla yaklaşır ve bilgiyi kolay anlaşılır şekilde aktarır.</p>
+    </div>
 
-<p class="info">
-  Neden Bizi Tercih Etmelisiniz?<br>
-  • Deneyimli eğitmen kadrosu<br>
-  • Yeni model araçlarla uygulama eğitimi<br>
-  • Uygun fiyat ve taksit imkânı<br>
-  • Yüksek başarı oranı
-</p>
+    <div class="egitmen">
+      <alt="Erbin Pak">
+      <h3>Erbin Pak</h3>
+      <p>Direksiyon eğitmeni olarak 15 yıldır tecrübeli. Öğrencilerine güvenli ve doğru sürüş tekniklerini öğretir.</p>
+    </div>
 
-<h3>Kursun Şube Konumuna Aşağıdan Ulaşabilirsiniz</h3>
+    <div class="egitmen">
+      <alt="Ümmet Taşçı">
+      <h3>Ümmet Taşçı</h3>
+      <p>Sabırlı ve dikkatli bir eğitmen. Her öğrenciyi kendi hızında geliştirir.</p>
+    </div>
+
+    <div class="egitmen">
+      <alt="Ümran Şahin">
+      <h3>Ümran Şahin</h3>
+      <p>Teorik ve pratik derslerde deneyimli, öğrencilerle iletişimi çok güçlüdür.</p>
+    </div>
+
+    <div class="egitmen">
+      <alt="Furkan Veysel Kıvrak">
+      <h3>Furkan Veysel Kıvrak</h3>
+      <p>Direksiyon derslerinde uzman ve güvenli sürüş tekniklerini öğreten bir eğitmen.</p>
+    </div>
+
+    <div class="egitmen">
+      <alt="Fatih Taşçı">
+      <h3>Fatih Taşçı</h3>
+      <p>Öğrencilerle iletişimi güçlü ve sabırlı bir eğitmen. Tecrübeli bir direksiyon hocasıdır.</p>
+    </div>
+
+    <div class="egitmen">
+      <alt="Ferruh Akalın">
+      <h3>Ferruh Akalın</h3>
+      <p>Teorik bilgileri pratikle birleştirerek öğrencilere etkili eğitim verir.</p>
+    </div>
+
+    <div class="egitmen">
+      <alt="Eşref Taşçı">
+      <h3>Eşref Taşçı</h3>
+      <p>Direksiyon derslerinde uzman ve öğrencilerin güvenle araç kullanmasını sağlar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kurs-sureci">
+  <h2 style="text-align:center;">Sürücü Kursu Süreci</h2>
+  <div class="adimlar">
+    <div class="adim">
+      <div class="numara">1</div>
+      <p>Kursa Kayıt İşlemleri</p>
+    </div>
+    <div class="adim">
+      <div class="numara">2</div>
+      <p>Eğitimler</p>
+    </div>
+    <div class="adim">
+      <div class="numara">3</div>
+      <p>Yazılı Sınav</p>
+    </div>
+    <div class="adim">
+      <div class="numara">4</div>
+      <p>Direksiyon Sınavı</p>
+    </div>
+    <div class="adim">
+      <div class="numara">5</div>
+      <p>Evrak İşlemleri</p>
+    </div>
+    <div class="adim">
+      <div class="numara">6</div>
+      <p>Ehliyet</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="basvuru">
+  <form>
+    <h2>Başvuru Formu</h2>
+    <input type="text" name="isim" placeholder="Ad Soyad" required><br>
+    <input type="tel" name="telefon" placeholder="Telefon" required><br>
+    <select name="kurs">
+      <option>B Sınıfı (Otomobil)</option>
+      <option>A Sınıfı (Motosiklet)</option>
+      <option>A2 Sınıfı (Motosiklet)</option>
+      <option>C Sınıfı</option>
+      <option>D Sınıfı</option>
+    </select><br>
+    <input type="submit" value="Gönder">
+  </form>
+  
+  <h2 style="text.align;center"  id="gereklibelgeler">Ehliyet Almak İçin Gerekli Belgeler</h2>
+  <p>*Kimlik Belgesi.</p>
+  <p>*Sürücü Sertifikası (Elektronik ortamda sistemden kontrol edilmektedir.)</p>
+  <p>*Öğrenim Belgesi, yurtdışından alınan öğrenim belgelerinin noter tasdikli tercümesi.</p>
+  <p>*Sürücü Sağlık Raporu.</p>
+  <p>*Sürücü belgesi değerli kâğıt ve harç bedeli, vakıf payı.</p>
+ 
+  
+  
+  
+</section>
+<!-- FAQ Bölümü -->
+<section id="sıkcasorulansorular" class="faq" style="max-width:800px; margin:50px auto;">
+  <h2 style="text-align:center; margin-bottom:30px;">Sıkça Sorulan Sorular</h2>
+
+  <div class="soru">
+    <h3>1. Ehliyet almak için yaş sınırı nedir?</h3>
+    <p>B sınıfı için 18, A sınıfı motosiklet için 16 yaşını doldurmuş olmanız gerekir.</p>
+  </div>
+
+  <div class="soru">
+    <h3>2. Direksiyon dersleri ne kadar sürüyor?</h3>
+    <p>Her direksiyon dersi yaklaşık 1 saat sürer ve kurs programınıza göre haftada 2-3 ders alabilirsiniz.</p>
+  </div>
+
+  <div class="soru">
+    <h3>3. Teorik dersler online olarak veriliyor mu?</h3>
+    <p>Evet, teori derslerini hem yüz yüze hem de online platform üzerinden takip edebilirsiniz.</p>
+  </div>
+
+  <div class="soru">
+    <h3>4. Kurs ücreti ne kadar ve taksit imkanı var mı?</h3>
+    <p>Kurs ücretimiz seçtiğiniz sınıfa göre değişir ve ödeme seçenekleriyle 3 veya 6 taksit imkanı sunulmaktadır.</p>
+  </div>
+
+  <div class="soru">
+    <h3>5. Sınav için ek bir hazırlık desteği veriliyor mu?</h3>
+    <p>Evet, sınav öncesi ekstra uygulama dersleri ve deneme sınavları ile öğrencilerimizi hazır hale getiriyoruz.</p>
+  </div>
+</section>
+
+<!-- İsteğe bağlı CSS -->
+<style>
+.faq h2 {
+  font-size: 28px;
+  color: #222;
+}
+.faq h3 {
+  color: #007bff;
+  margin-top: 20px;
+}
+.faq p {
+  color: #000;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+</style>
+
+<section id="yorumlar">
+  <h2 style="text-align:center;">Öğrenci Yorumları</h2>
+  <p><strong>Ahmet K.</strong>: “Yurt Sürücü Kursu sayesinde kısa sürede ehliyetimi aldım. Eğitmenler harika!”</p>
+  <p><strong>Elif T.</strong>: “Teorik ve direksiyon dersleri çok anlaşılır. Herkese tavsiye ederim.”</p>
+  <p><strong>Mehmet S.</strong>: “Araçlar çok temiz ve modern. Eğitim süreci çok keyifliydi.”</p>
+</section>
+
+
+<h3 style="text-align:center;" >Kursun Şube Konumuna Aşşağıdan Ulaşabilirsiniz.</h3>
 <iframe src="https://maps.google.com/maps?q=Yurt%20Sürücü%20Kursu%20Pendik&t=&z=15&ie=UTF8&iwloc=&output=embed"
- width="600" height="450" allowfullscreen loading="lazy"></iframe>
+	<p> 
+ İstanbul, Sultanbeyli, Fatih Blv., 137A </p>
+ width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-<form>
-  <h3>Başvuru Formu</h3>
-  <input type="text" name="isim" placeholder="Ad Soyad" required><br>
-  <input type="tel" name="telefon" placeholder="Telefon" required><br>
-  <select name="kurs">
-    <option>B Sınıfı (Otomobil)</option>
-    <option>A Sınıfı (Motosiklet)</option>
-    <option>A2 Sınıfı (Motosiklet)</option>
-    <option>C Sınıfı</option>
-    <option>D Sınıfı</option>
-  </select><br>
-  <input type="submit" value="Gönder">
-</form>
+<section id="sosyalmedya" style="text-align:center; margin:40px;">
+  <h2>Bizi Sosyal Medyada Takip Edin</h2>
+  <div class="social">
+    <a href="https://www.instagram.com/yurtsurucukursu/" target="_blank">
+
+      <img src="instagram_icon.png" alt="Instagram">
+    </a>
+  </div>
+</section>
 
 <footer>
   <p>📞 Şube: (216) 398 00 01 | Merkez: (216) 398 01 64</p>
